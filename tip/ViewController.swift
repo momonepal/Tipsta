@@ -19,8 +19,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let defaults = UserDefaults.standard
+        let tipIndex = defaults.integer(forKey: "TipSegmentIndex")
+        tipControl.selectedSegmentIndex = tipIndex
+        CalculateTip(self)
+        billField.becomeFirstResponder()
+        }
     
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)

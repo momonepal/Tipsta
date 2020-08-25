@@ -85,7 +85,15 @@
                             <outletCollection property="gestureRecognizers" destination="4Sa-sc-DNb" appends="YES" id="09S-Bb-wwf"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tipster" id="5WY-4k-avg"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Tipster" id="5WY-4k-avg">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Yuh-C0-lbo">
+                            <connections>
+                                <segue destination="HFp-Tk-gD5" kind="push" id="xSi-i3-DUu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="billField" destination="McD-fI-gyJ" id="C7a-B2-i9N"/>
                         <outlet property="tipControl" destination="VkT-vy-jw6" id="VIc-fW-CrE"/>
@@ -101,6 +109,40 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1047.2" y="111.57635467980296"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Fnd-d7-f7G">
+            <objects>
+                <viewController id="HFp-Tk-gD5" customClass="SettingsViewController" customModule="tip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YxL-fV-cJh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lSO-KG-q6S">
+                                <rect key="frame" x="16" y="391" width="343" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="12%"/>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="defaultController:" destination="HFp-Tk-gD5" eventType="valueChanged" id="bhK-M8-tXd"/>
+                                    <action selector="defaultTip:" destination="HFp-Tk-gD5" eventType="valueChanged" id="C6J-lG-Mv6"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rov-yb-sSR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="c3x-tJ-OMg"/>
+                    <connections>
+                        <outlet property="tipControl" destination="lSO-KG-q6S" id="0xS-qf-SrH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dN0-is-ceH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.8" y="111.57635467980296"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tFM-PL-Vgg">
