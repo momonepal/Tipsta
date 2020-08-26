@@ -19,19 +19,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        billField.becomeFirstResponder()
+                // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let defaults = UserDefaults.standard
-        let tipIndex = defaults.integer(forKey: "TipSegmentIndex")
-        tipControl.selectedSegmentIndex = tipIndex
-        CalculateTip(self)
-        billField.becomeFirstResponder()
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
@@ -45,6 +41,22 @@ class ViewController: UIViewController {
         let total = tip + bill
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let defaults = UserDefaults.standard
+        let bill = Double(billField.text!) ?? 0
+        
+        let defaultChanged = defaults.bool(forKey: "defaultChanged")
+        if (defaultChanged || bill == 0) { // only update segment if the default is changed
+            let intValue = defaults.integer(forKey: "tipIndex")
+            tipControl.selectedSegmentIndex = intValue
+            defaults.set(false, forKey: "defaultChanged") // updated
+        }
+        
+        self.CalculateTip(self)
     }
 }
 
