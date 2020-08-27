@@ -15,6 +15,7 @@
 		E46049AE24F4AE0200A247FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46049AC24F4AE0200A247FD /* LaunchScreen.storyboard */; };
 		E46049B924F4AE0200A247FD /* tipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46049B824F4AE0200A247FD /* tipTests.swift */; };
 		E46049C424F4AE0200A247FD /* tipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46049C324F4AE0200A247FD /* tipUITests.swift */; };
+		E48EEC8624F87339002F675E /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = E48EEC8524F87339002F675E /* default.png */; };
 		E4E27D2324F5F41200363C4A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E27D2224F5F41200363C4A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		E46049BF24F4AE0200A247FD /* tipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46049C324F4AE0200A247FD /* tipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipUITests.swift; sourceTree = "<group>"; };
 		E46049C524F4AE0200A247FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E48EEC8524F87339002F675E /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default.png; path = ../../default.png; sourceTree = "<group>"; };
 		E4E27D2224F5F41200363C4A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				E4E27D2224F5F41200363C4A /* SettingsViewController.swift */,
 				E46049AA24F4AE0200A247FD /* Assets.xcassets */,
 				E46049AC24F4AE0200A247FD /* LaunchScreen.storyboard */,
+				E48EEC8524F87339002F675E /* default.png */,
 				E46049AF24F4AE0200A247FD /* Info.plist */,
 			);
 			path = tip;
@@ -238,6 +241,7 @@
 				E46049AE24F4AE0200A247FD /* LaunchScreen.storyboard in Resources */,
 				E46049AB24F4AE0200A247FD /* Assets.xcassets in Resources */,
 				E46049A924F4ADFC00A247FD /* Main.storyboard in Resources */,
+				E48EEC8624F87339002F675E /* default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
