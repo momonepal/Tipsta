@@ -17,6 +17,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tipControl: UISegmentedControl!
     
+    @IBOutlet weak var Stepper: UIStepper!
+    
+    @IBOutlet weak var stepperLabel: UILabel!
+    
+    @IBOutlet weak var perPerson: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         billField.becomeFirstResponder()
@@ -41,6 +47,12 @@ class ViewController: UIViewController {
         let total = tip + bill
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        let pax = Stepper.value
+        stepperLabel.text = "Split :  " + String(Int(pax))
+        let pricePerPerson = total / (pax + 1)
+        perPerson.text = String(format: "Each person pays $%.2f", pricePerPerson)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
