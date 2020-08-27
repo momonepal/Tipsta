@@ -15,6 +15,7 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
+* [x] Users can select the number of people to split the bill with and displys total per person.
 * [x] Settings page to change the default tip percentage.
 * [ ] UI animations
 * [ ] Remembering the bill amount across app restarts (if <10mins)
@@ -23,9 +24,8 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [x] Users can select the number of people to split the bill with and displys total per person.
-* [x] Designed a warm UI.
 * [x] Added the App Icon to be displayed.
+* [x] Designed a warm UI.
 
 
 ## Video Walkthrough
