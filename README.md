@@ -40,7 +40,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-There were several small issues that came up such as a "reference ‘refs/heads/master’ not found" error or isuues with outlet, or error instantiating the deafault view but all of them were easily debugged. 
+There were several small issues that came up such as a "reference ‘refs/heads/master’ not found" error or issues with outlet, or error instantiating the default view but all of them were easily debugged. 
 In a short span of time building this app, there was so much that I learnt and also had fun along the way!
 
 ## License
