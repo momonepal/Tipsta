@@ -155,6 +155,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Tipsta" id="5WY-4k-avg">
+                        <barButtonItem key="leftBarButtonItem" title="✉️ Email Bill" id="k54-2B-aex">
+                            <connections>
+                                <action selector="emailBill:" destination="BYZ-38-t0r" id="zuN-uY-lzm"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Yuh-C0-lbo">
                             <connections>
                                 <segue destination="0Z2-ld-S9v" kind="push" id="9md-7P-HNu"/>

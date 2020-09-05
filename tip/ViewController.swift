@@ -1,14 +1,14 @@
-//
 //  ViewController.swift
 //  tip
-//
 //  Created by Mohit on 8/24/20.
-//  Copyright © 2020 Codepath. All rights reserved.
-//
+//  Copyright © 2020 All rights reserved.
 
 import UIKit
 
-class ViewController: UIViewController {
+import MessageUI
+
+class ViewController: UIViewController , MFMailComposeViewControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
+    
     @IBOutlet weak var billField: UITextField!
     
     @IBOutlet weak var tipLabel: UILabel!
@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         billField.becomeFirstResponder()
-                // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,8 +52,33 @@ class ViewController: UIViewController {
         stepperLabel.text = "Split :  " + String(Int(pax))
         let pricePerPerson = total / (pax + 1)
         perPerson.text = String(format: "Each person pays $%.2f", pricePerPerson)
-        
     }
+    
+    @IBAction func emailBill(_ sender: Any) {
+        sendEmail()
+    }
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["you@yoursite.com"])
+            mail.setMessageBody("<p>Here's the split bill. /(perPerson.text) </p>", isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            // show failure alert if they don't have mail set up
+            let alert = UIAlertController(title: "Email the Bills?", message: "\n Mail is not setup. \n Please setup your mail to enable emailing your bills.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .cancel, handler: nil))
+
+            self.present(alert, animated: true)
+            }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
