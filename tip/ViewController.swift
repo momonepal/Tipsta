@@ -63,7 +63,7 @@ class ViewController: UIViewController , MFMailComposeViewControllerDelegate, UI
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["you@yoursite.com"])
-            mail.setMessageBody("<p>Here's the split bill. /(perPerson.text) </p>", isHTML: true)
+            mail.setMessageBody("<p>Here's the split bill. \(perPerson.text) </p>", isHTML: true)
             
             present(mail, animated: true)
         } else {
