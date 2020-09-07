@@ -23,7 +23,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [x] Users can email the bills to be split to their friends.
+* [x] Users can email the bills to their friends to be split.
 * [x] Added a launch(Splash) Screen.
 * [x] Added the App Icon to be displayed.
 * [x] Designed a warm UI.
